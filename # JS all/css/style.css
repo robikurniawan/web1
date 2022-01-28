@@ -1,0 +1,92 @@
+ 
+ 
+ 
+* {
+     box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+}
+
+h3{
+    font-size: 30px;
+}
+
+#header{
+    background-color: rgba(229, 236, 241, 0.897);
+    border: 2px solid black;
+    padding:20px 30px;
+    margin-bottom: 10px;;
+}
+
+#sidebar {
+    float: left;
+    width: 30%;
+    background-color: rgba(248, 211, 108, 0.897);
+    border: 2px solid black;
+    padding:20px 30px;
+}
+
+#content {
+    float: left;
+    width:70%;
+    background-color: rgba(159, 241, 221, 0.918);
+    border: 2px solid black;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+}
+
+#footer {
+    margin-top: 20px;
+    clear: both;
+    background-color: rgba(240, 248, 255, 0.897);
+    border: 2px solid black;
+    padding: 20px 30px;
+}
+
+
+.judul{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.deskripsi{
+    margin-bottom: 10px;
+}
+
+
+.brand{
+    float: left;
+    width: 12%;
+}
+
+.menu{
+    float: left;
+    width: 85%;
+    text-align: right;
+}
+
+.clear{
+    clear: both;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    float: right;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    padding: 10px 14px;
+}
+
+.menu a:hover {
+    background-color: rgb(1, 56, 42);
+    color:#fff;
+    font-size: 20px;
+    border-radius: 20px;
+}
