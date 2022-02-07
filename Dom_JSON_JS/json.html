@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+
+        <h1>Users</h1>
+        <button onclick="fetchData()"> Tampilkan Users </button>
+        <div id="userLists"> </div>
+    </div>
+
+    <script>
+        function fetchData() {
+
+            fetch("./students.json")
+                .then(response => {
+                    return response.json();
+                })
+                .then(jsondata => renderData(jsondata));  
+        }
+
+        function renderData(data) {
+            for (const q of data) {
+
+                const users = document.querySelector('#userLists');
+                const name = document.createElement('p');
+
+                name.innerHTML = q.firstName +" "+ q.lastName;
+                users.append(name);
+            }
+        }
+
+   
+
+        
+    </script>
+
+
+
+</body>
+
+</html>

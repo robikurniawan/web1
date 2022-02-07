@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Latihan 1 FIKOM Unimerz </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="header">
+        <div class="brand">
+            Ini Header
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#"> Beranda </a>
+                </li>
+                <li>
+                    <a href="#"> Profil </a>
+                </li>
+                <li>
+                    <a href="#"> News </a>
+                </li>
+                <li>
+                    <a href="#"> Kontak </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="sidebar">
+        Ini sidebar
+    </div>
+
+    <div id="content">
+        <h1> Berita Terkini </h1>
+
+        <div id="newsLists"></div>
+
+    </div>
+
+    <div id="footer">
+        ini footer
+    </div>
+
+    <script>
+
+        function fetchData() {
+
+            fetch("./news.json")
+                .then(response => {
+                    return response.json()
+                })
+                .then(datajson => renderData(datajson))
+        }
+
+        function renderData(data) {
+            for(const value of data.articles) {
+                const content = document.querySelector('#newsLists');
+                const title = document.createElement('h4');
+                const desc = document.createElement('p');
+
+                title.innerHTML = value.title;
+                desc.innerHTML = value.description;
+
+                content.append(title)
+                content.append(desc)
+            }
+        }
+
+        fetchData()
+
+    </script>
+
+</body>
+
+</html>
